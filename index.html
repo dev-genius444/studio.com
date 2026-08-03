@@ -1,453 +1,415 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
 
-<html class="dark" lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>STUDIO.CRAFT | Digital Craftsmanship</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        :root {
-            --glow-purple: rgba(138, 43, 226, 0.5);
-            --glow-cyan: rgba(0, 251, 251, 0.5);
-        }
-        
-        body {
-            background-color: #0b0b0f;
-            color: #e4e1e7;
-            overflow-x: hidden;
-        }
+<head>
+    <!-- ===== Metadados básicos ===== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDIO.CRAFT | Criação de Sites Profissionais para Negócios de Alto Padrão</title>
+    <meta name="description"
+        content="A STUDIO.CRAFT cria sites institucionais e de alta conversão para salões, barbearias, clínicas, boutiques, academias e gráficas. Design premium, hospedagem, SEO e suporte técnico em um só lugar." />
+    <meta name="keywords"
+        content="criação de sites, desenvolvimento web, freelancer web designer, site para salão de beleza, site para barbearia, site para clínica, site profissional, landing page, orçamento de site" />
+    <meta name="author" content="STUDIO.CRAFT" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="pt-BR" />
+    <meta name="theme-color" content="#0b0b0f" />
+    <link rel="canonical" href="https://www.studiocraft.com.br/" />
 
-        .grid-pattern {
-            background-image: linear-gradient(rgba(220, 184, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(220, 184, 255, 0.03) 1px, transparent 1px);
-            background-size: 32px 32px;
-        }
+    <!-- ===== Open Graph (compartilhamento em redes sociais) ===== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="STUDIO.CRAFT" />
+    <meta property="og:title" content="STUDIO.CRAFT | Criação de Sites Profissionais para Negócios de Alto Padrão" />
+    <meta property="og:description"
+        content="Sites de alta conversão com estética premium e performance técnica impecável, feitos sob medida para o seu negócio." />
+    <meta property="og:image" content="https://www.studiocraft.com.br/assets/og-image.jpg" />
+    <meta property="og:image:alt" content="Mockup de site premium criado pela STUDIO.CRAFT" />
+    <meta property="og:url" content="https://www.studiocraft.com.br/" />
+    <meta property="og:locale" content="pt_BR" />
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="STUDIO.CRAFT | Criação de Sites Profissionais" />
+    <meta name="twitter:description"
+        content="Sites de alta conversão com estética premium e performance técnica impecável, feitos sob medida para o seu negócio." />
+    <meta name="twitter:image" content="https://www.studiocraft.com.br/assets/og-image.jpg" />
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    <!-- ===== Ícones ===== -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0f'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%2300fbfb' text-anchor='middle'%3ESC%3C/text%3E%3C/svg%3E" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
-        .glass-card {
-            backdrop-filter: blur(20px);
-            background: rgba(19, 19, 23, 0.6);
-            border: 1px solid rgba(152, 140, 160, 0.2);
-        }
+    <!-- ===== Fontes ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
 
-        .glow-border-purple {
-            border: 1px solid rgba(220, 184, 255, 0.3);
-            box-shadow: 0 0 20px rgba(220, 184, 255, 0.05);
-        }
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="styles.css" />
 
-        .glow-border-cyan {
-            border: 1px solid rgba(0, 251, 251, 0.3);
-            box-shadow: 0 0 20px rgba(0, 251, 251, 0.05);
-        }
-
-        .btn-3d {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .btn-3d:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 4px 4px 0px theme('colors.primary-container');
-        }
-
-        .btn-3d:active {
-            transform: translate(0, 0);
-            box-shadow: 0px 0px 0px theme('colors.primary-container');
-        }
-
-        .shimmer-text {
-            background: linear-gradient(90deg, #ffd9df 0%, #00fbfb 50%, #ffd9df 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 4s linear infinite;
-        }
-
-        @keyframes shimmer {
-            to { background-position: 200% center; }
-        }
-
-        .pulse-node {
-            animation: pulse-node 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
-        }
-
-        @keyframes pulse-node {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.5; }
-        }
-    </style>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface-variant": "#353439",
-                        "on-surface": "#e4e1e7",
-                        "on-primary-container": "#eed9ff",
-                        "on-tertiary-container": "#ffd7dd",
-                        "primary-fixed": "#efdbff",
-                        "on-primary": "#480081",
-                        "primary": "#dcb8ff",
-                        "on-tertiary-fixed-variant": "#6b3743",
-                        "surface-tint": "#dcb8ff",
-                        "on-tertiary-fixed": "#360c19",
-                        "on-secondary-fixed": "#002020",
-                        "surface-container-highest": "#353439",
-                        "secondary-fixed": "#00fbfb",
-                        "inverse-surface": "#e4e1e7",
-                        "inverse-on-surface": "#303034",
-                        "on-background": "#e4e1e7",
-                        "error": "#ffb4ab",
-                        "on-primary-fixed-variant": "#6700b5",
-                        "surface-container-lowest": "#0e0e12",
-                        "tertiary-container": "#8c5360",
-                        "outline": "#988ca0",
-                        "inverse-primary": "#8422dc",
-                        "secondary": "#ffffff",
-                        "surface": "#131317",
-                        "on-primary-fixed": "#2c0051",
-                        "surface-container": "#1f1f23",
-                        "tertiary-fixed-dim": "#fbb3c1",
-                        "error-container": "#93000a",
-                        "on-error": "#690005",
-                        "on-secondary-fixed-variant": "#004f4f",
-                        "on-tertiary": "#50212d",
-                        "surface-container-low": "#1b1b1f",
-                        "primary-container": "#8a2be2",
-                        "background": "#131317",
-                        "on-secondary": "#003737",
-                        "tertiary": "#fbb3c1",
-                        "surface-dim": "#131317",
-                        "on-secondary-container": "#007070",
-                        "secondary-fixed-dim": "#00dddd",
-                        "secondary-container": "#00fbfb",
-                        "surface-container-high": "#2a292e",
-                        "outline-variant": "#4c4354",
-                        "surface-bright": "#39393d",
-                        "tertiary-fixed": "#ffd9df",
-                        "on-error-container": "#ffdad6",
-                        "primary-fixed-dim": "#dcb8ff",
-                        "on-surface-variant": "#cfc2d7"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "margin-mobile": "20px",
-                        "container-max": "1440px",
-                        "unit": "8px",
-                        "margin-desktop": "80px"
-                    },
-                    "fontFamily": {
-                        "label-sm": ["Space Grotesk"],
-                        "display-lg": ["Space Grotesk"],
-                        "headline-lg": ["Space Grotesk"],
-                        "headline-lg-mobile": ["Space Grotesk"],
-                        "body-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "headline-md": ["Space Grotesk"],
-                        "display-lg-mobile": ["Space Grotesk"]
-                    },
-                    "fontSize": {
-                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
-                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
-                    }
-                },
-            },
-        }
+    <!-- ===== Dados estruturados (JSON-LD) — otimização para IA/buscadores (AEO/GEO) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "STUDIO.CRAFT",
+      "description": "Estúdio freelancer especializado em criação de sites profissionais, com foco em design premium, performance técnica, SEO e manutenção contínua para negócios locais.",
+      "url": "https://www.studiocraft.com.br/",
+      "image": "https://www.studiocraft.com.br/assets/og-image.jpg",
+      "priceRange": "$$",
+      "areaServed": "BR",
+      "serviceType": [
+        "Criação de sites",
+        "Hospedagem de sites",
+        "Otimização SEO",
+        "Manutenção e segurança de sites",
+        "Design de UI/UX"
+      ],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site para salões de beleza" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site para barbearias" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site para clínicas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site para boutiques e e-commerce de moda" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site para academias" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site para gráficas" } }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/studiocraft",
+        "https://www.behance.net/studiocraft"
+      ]
+    }
     </script>
 </head>
-<body class="font-body-md text-on-surface">
-<!-- Grid Pattern Overlay -->
-<div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
-<!-- Navigation -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface/30 backdrop-blur-xl border-b border-tertiary/20 shadow-[0_0_40px_rgba(220,184,255,0.1)]">
-<div class="flex justify-between items-center px-6 py-4 w-full z-50 max-w-container-max mx-auto">
-<span class="font-display-lg-mobile text-headline-md font-bold text-on-surface">STUDIO.CRAFT</span>
-<div class="hidden md:flex gap-8 items-center">
-<nav class="flex gap-6 font-label-sm text-label-sm uppercase tracking-widest">
-<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300" href="#specialties">Niches</a>
-<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300" href="#services">Serviços</a>
-<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300" href="#process">Processo</a>
-</nav>
-<button class="px-6 py-2 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-surface/40 transition-all border border-primary/30">CONTACT</button>
-</div>
-<div class="md:hidden">
-<span class="material-symbols-outlined text-primary">grid_view</span>
-</div>
-</div>
-</header>
-<main class="relative z-10 pt-20">
-<!-- Hero Section -->
-<section class="min-h-screen flex flex-col justify-center items-center px-6 py-20 text-center max-w-container-max mx-auto">
-<div class="reveal">
-<span class="font-label-sm text-label-sm uppercase text-secondary-fixed mb-4 inline-block tracking-[0.3em]">EXCELÊNCIA DIGITAL</span>
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight max-w-4xl mx-auto">
-                    Transforme sua marca em uma <span class="shimmer-text">experiência digital</span> de alto nível
-                </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
-                    Criação de sites de alta conversão, unindo estética luxuosa e performance técnica impecável para negócios visionários.
-                </p>
-<a class="btn-3d inline-flex items-center gap-3 bg-primary-container text-on-primary-container px-8 py-5 rounded-lg font-headline-md text-body-lg font-bold" href="#">
-                    Solicitar Orçamento via WhatsApp
-                    <span class="material-symbols-outlined">arrow_forward</span>
-</a>
-</div>
-<div class="mt-20 w-full max-w-5xl reveal delay-300">
-<div class="relative glass-card p-4 rounded-xl glow-border-purple group overflow-hidden">
-<img class="w-full h-auto rounded-lg grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A hyper-realistic 3D device mockup showcasing a dark luxury website interface on a floating sleek glass tablet. The scene is set in a dark studio with neon purple and cyan ambient lighting reflecting off the glass surfaces. Atmospheric depth and soft focus in the background emphasize technical precision and premium craftsmanship. High contrast with a subtle grid pattern overlay." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgJ2RlPS9s-ABzOVN19B_rt1bebOyrhLmZI53RVR50tOWXI1MiKrW5TeUnRVRIU8sNNsuzrUT_HZBFueDiAX5WYLgJyMrIGD9uHtb_jpN8BD0uL-EGxQeinaExAJCwJRUDKX2_re1HVN1-DsnTtnPvkfYfYQRERH8PE4w0rKWNDLdCBsigakCXcqwp1z6nXnpa9IgCVT-JBe42g6bEv7RC0CVlzZv8usd43N1qr92CdoNivpntgkeh"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40"></div>
-</div>
-</div>
-</section>
-<!-- Specialties Section -->
-<section class="py-40 px-6 max-w-container-max mx-auto" id="specialties">
-<div class="text-center mb-20 reveal">
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Especialistas em Nichos de Alto Valor</h2>
-<div class="h-1 w-24 bg-secondary-fixed mx-auto"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Niche 1 -->
-<div class="reveal glass-card p-6 rounded-xl group hover:glow-border-cyan transition-all duration-500">
-<div class="aspect-video mb-6 overflow-hidden rounded-lg glow-border-purple">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist, high-end beauty salon interior with soft, warm architectural lighting. The scene is captured with a high-key aesthetic focusing on polished marble surfaces and elegant glass accents. Deep blacks and rose gold highlights create a luxurious, serene atmosphere. The style is modern and sophisticated, suitable for a boutique brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnlcmdqU95ubcN7Hwi7XG8Zr6z7tY6US1y1PtM2qQRYR-CHigYqRhPtrqStpol0Q2Xt8b0B6AOIZnch4maOa4uFC9P_dwJF29jcLEQpKAkjIzd2QgRiCZqJI_EjD_Y3j8-G6XaA3dfAUQpH9QhgeqhgUcUeUJx1b1oVAqSCYzsyhnbrvLluIOeIAH6QjRHAqctWihwwDpaPkhHfnXMc0pHt2c23q6pQyqRxvX7r4o-ikZtYYLZ7mwJ"/>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Salões de Beleza</h3>
-<p class="text-on-surface-variant">Interfaces sofisticadas que transmitem o toque de luxo dos seus serviços.</p>
-</div>
-<!-- Niche 2 -->
-<div class="reveal glass-card p-6 rounded-xl group hover:glow-border-purple transition-all duration-500 delay-100">
-<div class="aspect-video mb-6 overflow-hidden rounded-lg glow-border-cyan">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A vintage-modern barbershop with high contrast lighting, dark leather chairs, and industrial wooden elements. Neon cyan accents illuminate the background tools and bottles. The mood is masculine, sharp, and detailed, emphasizing technical precision and a cool, urban vibe in a dark mode studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfzksNWZafGW27VxQCMUoMhBqdz3imXxZ_XhtyMti_kWwz8YBB7r8qugVlSnVxxdd7z-qr1hWhNFR3i1DVdG1s0VsWuCe1aY_jC8DtfgsVwSZGz858U7Xj3tXRYPO9Gfhzwo9PJc6FfnXz9aAoj0I2iqkzOe6SbE31yvPaU3YZOTxzHJIUYxsklfyuXIJEYU38hDMRbCaIABqVBsau3YhDQJFMor2MPCrenFps9-C64XsUOM0zTPr2"/>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Barbearias</h3>
-<p class="text-on-surface-variant">Design robusto e moderno para destacar a autoridade da sua arte.</p>
-</div>
-<!-- Niche 3 -->
-<div class="reveal glass-card p-6 rounded-xl group hover:glow-border-cyan transition-all duration-500 delay-200">
-<div class="aspect-video mb-6 overflow-hidden rounded-lg glow-border-purple">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-tech digital printing studio with rows of large format printers emitting soft purple glows. Close-up of vibrant ink patterns and architectural lines. The lighting is low-key, focusing on the precision of the machinery and the quality of the materials. Modern, clean, and technologically advanced atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmhkVmDoA4cooVlNRDzVmJQj9J4nfT2GbljqmSVGXAc-lLvq5ZNZMhfPxEIN286GWLuQ71S51V0buJ8BBncy5VpXlhuldVw1tr87ok0ijDA-NYRnk0Si8sQqizJgmqcOyANfQCAnTJwcdXxCBiPO_yF6dsGg6fv4-YfaJKszjg8CLqag__HLDFOFeybglxUkN6CkLB-CRq1lv1YkAIiywJQ4N7ADWkPKmgOJ_hgk-eKdKynRRqnevP"/>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Gráficas</h3>
-<p class="text-on-surface-variant">Portfólios dinâmicos que mostram a precisão da sua impressão.</p>
-</div>
-<!-- Niche 4 -->
-<div class="reveal glass-card p-6 rounded-xl group hover:glow-border-purple transition-all duration-500 delay-300">
-<div class="aspect-video mb-6 overflow-hidden rounded-lg glow-border-cyan">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Inside a high-end fashion boutique with minimalist displays and designer clothes. The lighting is cinematic, casting long shadows on dark polished floors. Soft rose gold accents and glass partitions create a sense of exclusivity and haute couture. The aesthetic is avant-garde and expensive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCubHfb-xyBVurydj7hBuWevfBRDzyERrcR_-G0iHLOjlOW1CQ5MLt8Vf2HZuGdS4ca1ch-5Q5qhuSDzKG91cR4hB30o8_4VRvde2PzVU7xu7OF6ypNgqnhVTmUPPNCTksxcUt5JVgJ36fdyYxwvkpd__pcfGzssd_hLfGl8hwyvqOEouNi-bjWdqDvMFRFLF5SuZ5woICsAgh1lmNuo6EGeyRfdtRdVbRHlTU4LDwLRouXTkm0fqmr"/>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Boutiques</h3>
-<p class="text-on-surface-variant">Experiência de e-commerce exclusiva para marcas de moda premium.</p>
-</div>
-<!-- Niche 5 -->
-<div class="reveal glass-card p-6 rounded-xl group hover:glow-border-cyan transition-all duration-500 delay-400">
-<div class="aspect-video mb-6 overflow-hidden rounded-lg glow-border-purple">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A modern medical clinic reception with a clean, glass-and-steel aesthetic. Soft ambient cyan lighting creates a sterile yet welcoming feel. High-quality furniture and minimalist architectural details emphasize trust, professionalism, and advanced medical technology. The scene is bright and airy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTlvgWOA2Iiogb0dp_NBG1tD0mddQIvF1-wRiNV3RAlPhvGg4bZbUG7uWhAItAO8984dF6tVfacr6eHPnycWRfHoh2HHeLbTFb-rU5ZLDeqbqDXtGHn2B9anN2Ei_5kQHOBd0VOp3k6IP8ktTyQzo8ylO6f3sK4HlewNaLJ2zK5OYjBgr2yParTuw6esLlPerx6hIj3Nlurly0iPEophblzf5U66Ryx0eMDGZKqySKo9wWCU8KVyoi"/>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Clínicas</h3>
-<p class="text-on-surface-variant">Design ético e sereno focado em transmitir confiança aos pacientes.</p>
-</div>
-<!-- Niche 6 -->
-<div class="reveal glass-card p-6 rounded-xl group hover:glow-border-purple transition-all duration-500 delay-500">
-<div class="aspect-video mb-6 overflow-hidden rounded-lg glow-border-cyan">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic fitness center with neon purple and cyan lighting. Sleek metal equipment reflecting the lights in a dark, atmospheric environment. High energy mood with a focus on strength and precision. The background features a subtle 32px grid pattern to match the construction theme of the UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK0fAY7aKeusARBCbdy4Jd6eCSsWYk4heRT344MrBzbjHjuY4guKL0Nbr4lovzmNFU0vhcbG3vW6vul0G1qJqkVHnLG_aYki5npmM5rozUmXaBmSm0gz22_Lo8hm6BsCuKO-rD9cw-9fXramIm1SIFCSlopoIWxt6KpoLK8aWjE9lXehd7TMHk_J4VhHg6iOHqCUY7sAo8ZVuGD2Rz5-RtbgOodV-DJmlkgEj9OqAMgmYjDCppwbYo"/>
-</div>
-<h3 class="font-headline-md text-headline-md mb-2">Academias</h3>
-<p class="text-on-surface-variant">Layouts vibrantes e de alta energia para captar novos membros.</p>
-</div>
-</div>
-</section>
-<!-- Services Section -->
-<section class="py-40 bg-surface-container-low px-6" id="services">
-<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-<div class="reveal">
-<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest mb-4 inline-block">NOSSOS SERVIÇOS</span>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">Gestão Completa do seu Ecossistema Digital</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Não apenas criamos sites; mantemos sua presença online impecável e escalável.</p>
-<div class="flex flex-col gap-6">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-secondary-fixed p-3 glass-card rounded-full" style="font-variation-settings: 'FILL' 1;">verified</span>
-<span class="font-headline-md text-body-lg">Hospedagem de Ultra Velocidade</span>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary p-3 glass-card rounded-full" style="font-variation-settings: 'FILL' 1;">security</span>
-<span class="font-headline-md text-body-lg">Manutenção &amp; Segurança Ativa</span>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal delay-200">
-<!-- Service 1 -->
-<div class="glass-card p-8 rounded-xl glow-border-purple hover:-translate-y-2 transition-transform duration-300">
-<span class="material-symbols-outlined text-4xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">dns</span>
-<h4 class="font-headline-md text-headline-md mb-4">Hosting</h4>
-<p class="text-on-surface-variant text-sm">Servidores dedicados de baixa latência.</p>
-</div>
-<!-- Service 2 -->
-<div class="glass-card p-8 rounded-xl glow-border-cyan hover:-translate-y-2 transition-transform duration-300">
-<span class="material-symbols-outlined text-4xl text-secondary-fixed mb-6" style="font-variation-settings: 'FILL' 1;">query_stats</span>
-<h4 class="font-headline-md text-headline-md mb-4">SEO</h4>
-<p class="text-on-surface-variant text-sm">Otimização para o topo do Google.</p>
-</div>
-<!-- Service 3 -->
-<div class="glass-card p-8 rounded-xl glow-border-cyan hover:-translate-y-2 transition-transform duration-300">
-<span class="material-symbols-outlined text-4xl text-secondary-fixed mb-6" style="font-variation-settings: 'FILL' 1;">update</span>
-<h4 class="font-headline-md text-headline-md mb-4">Atualizações</h4>
-<p class="text-on-surface-variant text-sm">Conteúdo renovado semanalmente.</p>
-</div>
-<!-- Service 4 -->
-<div class="glass-card p-8 rounded-xl glow-border-purple hover:-translate-y-2 transition-transform duration-300">
-<span class="material-symbols-outlined text-4xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">build</span>
-<h4 class="font-headline-md text-headline-md mb-4">Suporte</h4>
-<p class="text-on-surface-variant text-sm">Manutenção técnica constante.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Process Section -->
-<section class="py-40 px-6 max-w-container-max mx-auto" id="process">
-<div class="text-center mb-24 reveal">
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Como Elevamos sua Marca</h2>
-<p class="text-on-surface-variant mt-4">Um processo arquitetado para precisão e resultados.</p>
-</div>
-<div class="relative max-w-4xl mx-auto">
-<!-- Timeline Line -->
-<div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-secondary-fixed opacity-30 border-dashed border-l md:block hidden"></div>
-<div class="flex flex-col gap-24">
-<!-- Step 1 -->
-<div class="relative flex flex-col md:flex-row items-center gap-12 reveal">
-<div class="flex-1 md:text-right">
-<h3 class="font-headline-md text-headline-md mb-2">1. Diagnóstico</h3>
-<p class="text-on-surface-variant">Análise profunda do seu negócio e objetivos de mercado para traçar a melhor estratégia.</p>
-</div>
-<div class="relative z-10 w-4 h-4 bg-secondary-fixed rounded-full shadow-[0_0_15px_rgba(0,251,251,0.8)] pulse-node"></div>
-<div class="flex-1"></div>
-</div>
-<!-- Step 2 -->
-<div class="relative flex flex-col md:flex-row-reverse items-center gap-12 reveal">
-<div class="flex-1 md:text-left">
-<h3 class="font-headline-md text-headline-md mb-2">2. Design</h3>
-<p class="text-on-surface-variant">Criação de protótipos de alta fidelidade focados em experiência do usuário e estética premium.</p>
-</div>
-<div class="relative z-10 w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(220,184,255,0.8)] pulse-node"></div>
-<div class="flex-1"></div>
-</div>
-<!-- Step 3 -->
-<div class="relative flex flex-col md:flex-row items-center gap-12 reveal">
-<div class="flex-1 md:text-right">
-<h3 class="font-headline-md text-headline-md mb-2">3. Desenvolvimento</h3>
-<p class="text-on-surface-variant">Codificação limpa, rápida e responsiva utilizando as tecnologias mais modernas do mercado.</p>
-</div>
-<div class="relative z-10 w-4 h-4 bg-secondary-fixed rounded-full shadow-[0_0_15px_rgba(0,251,251,0.8)] pulse-node"></div>
-<div class="flex-1"></div>
-</div>
-<!-- Step 4 -->
-<div class="relative flex flex-col md:flex-row-reverse items-center gap-12 reveal">
-<div class="flex-1 md:text-left">
-<h3 class="font-headline-md text-headline-md mb-2">4. Lançamento</h3>
-<p class="text-on-surface-variant">Deployment final, otimização de SEO e treinamento para que você domine sua nova ferramenta.</p>
-</div>
-<div class="relative z-10 w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(220,184,255,0.8)] pulse-node"></div>
-<div class="flex-1"></div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA / Contact Section -->
-<section class="py-40 px-6">
-<div class="max-w-4xl mx-auto glass-card p-12 rounded-3xl glow-border-purple reveal relative overflow-hidden">
-<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/20 blur-[100px] rounded-full"></div>
-<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary-fixed/10 blur-[100px] rounded-full"></div>
-<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16">
-<div>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 leading-tight">Pronto para o próximo nível?</h2>
-<p class="text-on-surface-variant mb-10">Inicie seu projeto hoje e receba uma consultoria estratégica gratuita.</p>
-<a class="btn-3d w-full flex justify-center items-center gap-4 bg-secondary-fixed text-on-secondary-fixed py-6 rounded-xl font-bold text-lg mb-8 transition-all" href="https://wa.me/yourlink">
-<span class="material-symbols-outlined">chat</span>
+
+<body>
+    <!-- Link de acessibilidade: permite pular direto para o conteúdo -->
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+    <div class="grid-pattern" aria-hidden="true"></div>
+
+    <!-- ===== Barra superior (visível apenas em tablet/mobile) ===== -->
+    <header class="topbar">
+        <button type="button" class="menu-toggle" id="sidebarToggle" aria-label="Abrir menu de navegação"
+            aria-expanded="false" aria-controls="sidebar">
+            <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+        <span class="topbar__brand">STUDIO.CRAFT</span>
+        <a class="topbar__cta" href="https://wa.me/5500000000000" aria-label="Falar no WhatsApp">
+            <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+        </a>
+    </header>
+
+    <!-- Fundo escurecido ao abrir o menu no mobile/tablet -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- ===== Sidebar de navegação ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar__brand">
+            <span class="sidebar__logo">STUDIO.CRAFT</span>
+            <span class="sidebar__tagline">Digital Craftsmanship</span>
+        </div>
+
+        <nav class="sidebar__nav" aria-label="Navegação principal">
+            <a class="sidebar__link is-active" data-nav href="#inicio">
+                <span class="material-symbols-outlined" aria-hidden="true">home</span>
+                Início
+            </a>
+            <a class="sidebar__link" data-nav href="#nichos">
+                <span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
+                Nichos
+            </a>
+            <a class="sidebar__link" data-nav href="#servicos">
+                <span class="material-symbols-outlined" aria-hidden="true">dns</span>
+                Serviços
+            </a>
+            <a class="sidebar__link" data-nav href="#processo">
+                <span class="material-symbols-outlined" aria-hidden="true">timeline</span>
+                Processo
+            </a>
+            <a class="sidebar__link" data-nav href="#contato">
+                <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+                Contato
+            </a>
+        </nav>
+
+        <a class="sidebar__cta" href="https://wa.me/5500000000000">
+            <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+            Orçamento via WhatsApp
+        </a>
+
+        <div class="sidebar__social">
+            <a href="https://www.instagram.com/studiocraft" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram da STUDIO.CRAFT">
+                <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>
+            </a>
+            <a href="https://www.behance.net/studiocraft" target="_blank" rel="noopener noreferrer"
+                aria-label="Behance da STUDIO.CRAFT">
+                <span class="material-symbols-outlined" aria-hidden="true">palette</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="shell">
+        <main id="conteudo-principal">
+            <!-- ===== Hero ===== -->
+            <section id="inicio" class="hero" aria-labelledby="hero-title">
+                <div class="hero__content reveal">
+                    <p class="eyebrow">Excelência Digital</p>
+                    <h1 id="hero-title" class="hero__title">
+                        Transforme sua marca em uma <span class="text-gradient">experiência digital</span> de alto
+                        nível
+                    </h1>
+                    <p class="hero__lead">
+                        Criação de sites de alta conversão, unindo estética luxuosa e performance técnica impecável
+                        para negócios visionários.
+                    </p>
+                    <a class="btn btn--primary" href="https://wa.me/5500000000000">
+                        Solicitar orçamento via WhatsApp
+                        <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="hero__preview reveal delay-300">
+                    <figure class="frame frame--purple">
+                        <img class="frame__image" loading="lazy" width="1200" height="800"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgJ2RlPS9s-ABzOVN19B_rt1bebOyrhLmZI53RVR50tOWXI1MiKrW5TeUnRVRIU8sNNsuzrUT_HZBFueDiAX5WYLgJyMrIGD9uHtb_jpN8BD0uL-EGxQeinaExAJCwJRUDKX2_re1HVN1-DsnTtnPvkfYfYQRERH8PE4w0rKWNDLdCBsigakCXcqwp1z6nXnpa9IgCVT-JBe42g6bEv7RC0CVlzZv8usd43N1qr92CdoNivpntgkeh"
+                            alt="Mockup de site premium exibido em um tablet de vidro, com iluminação neon roxa e ciano em estúdio escuro." />
+                        <div class="frame__fade" aria-hidden="true"></div>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- ===== Nichos ===== -->
+            <section id="nichos" class="niches" aria-labelledby="niches-title">
+                <div class="section-header reveal">
+                    <h2 id="niches-title" class="section-title">Especialistas em Nichos de Alto Valor</h2>
+                    <div class="section-divider" aria-hidden="true"></div>
+                </div>
+
+                <ul class="niches__grid" role="list">
+                    <li class="card card--niche reveal">
+                        <figure class="card__media card__media--cyan">
+                            <img loading="lazy" width="600" height="338"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnlcmdqU95ubcN7Hwi7XG8Zr6z7tY6US1y1PtM2qQRYR-CHigYqRhPtrqStpol0Q2Xt8b0B6AOIZnch4maOa4uFC9P_dwJF29jcLEQpKAkjIzd2QgRiCZqJI_EjD_Y3j8-G6XaA3dfAUQpH9QhgeqhgUcUeUJx1b1oVAqSCYzsyhnbrvLluIOeIAH6QjRHAqctWihwwDpaPkhHfnXMc0pHt2c23q6pQyqRxvX7r4o-ikZtYYLZ7mwJ"
+                                alt="Interior de salão de beleza minimalista com iluminação quente e detalhes em rosé gold." />
+                        </figure>
+                        <h3 class="card__title">Salões de Beleza</h3>
+                        <p class="card__text">Interfaces sofisticadas que transmitem o toque de luxo dos seus
+                            serviços.</p>
+                    </li>
+
+                    <li class="card card--niche reveal delay-100">
+                        <figure class="card__media card__media--purple">
+                            <img loading="lazy" width="600" height="338"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfzksNWZafGW27VxQCMUoMhBqdz3imXxZ_XhtyMti_kWwz8YBB7r8qugVlSnVxxdd7z-qr1hWhNFR3i1DVdG1s0VsWuCe1aY_jC8DtfgsVwSZGz858U7Xj3tXRYPO9Gfhzwo9PJc6FfnXz9aAoj0I2iqkzOe6SbE31yvPaU3YZOTxzHJIUYxsklfyuXIJEYU38hDMRbCaIABqVBsau3YhDQJFMor2MPCrenFps9-C64XsUOM0zTPr2"
+                                alt="Barbearia vintage-moderna com cadeiras de couro escuras e detalhes industriais em madeira." />
+                        </figure>
+                        <h3 class="card__title">Barbearias</h3>
+                        <p class="card__text">Design robusto e moderno para destacar a autoridade da sua arte.</p>
+                    </li>
+
+                    <li class="card card--niche reveal delay-200">
+                        <figure class="card__media card__media--cyan">
+                            <img loading="lazy" width="600" height="338"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmhkVmDoA4cooVlNRDzVmJQj9J4nfT2GbljqmSVGXAc-lLvq5ZNZMhfPxEIN286GWLuQ71S51V0buJ8BBncy5VpXlhuldVw1tr87ok0ijDA-NYRnk0Si8sQqizJgmqcOyANfQCAnTJwcdXxCBiPO_yF6dsGg6fv4-YfaJKszjg8CLqag__HLDFOFeybglxUkN6CkLB-CRq1lv1YkAIiywJQ4N7ADWkPKmgOJ_hgk-eKdKynRRqnevP"
+                                alt="Estúdio de impressão digital de alta tecnologia com impressoras de grande formato em brilho roxo." />
+                        </figure>
+                        <h3 class="card__title">Gráficas</h3>
+                        <p class="card__text">Portfólios dinâmicos que mostram a precisão da sua impressão.</p>
+                    </li>
+
+                    <li class="card card--niche reveal delay-300">
+                        <figure class="card__media card__media--purple">
+                            <img loading="lazy" width="600" height="338"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCubHfb-xyBVurydj7hBuWevfBRDzyERrcR_-G0iHLOjlOW1CQ5MLt8Vf2HZuGdS4ca1ch-5Q5qhuSDzKG91cR4hB30o8_4VRvde2PzVU7xu7OF6ypNgqnhVTmUPPNCTksxcUt5JVgJ36fdyYxwvkpd__pcfGzssd_hLfGl8hwyvqOEouNi-bjWdqDvMFRFLF5SuZ5woICsAgh1lmNuo6EGeyRfdtRdVbRHlTU4LDwLRouXTkm0fqmr"
+                                alt="Boutique de moda minimalista com araras de roupas de grife e piso escuro polido." />
+                        </figure>
+                        <h3 class="card__title">Boutiques</h3>
+                        <p class="card__text">Experiência de e-commerce exclusiva para marcas de moda premium.</p>
+                    </li>
+
+                    <li class="card card--niche reveal delay-400">
+                        <figure class="card__media card__media--cyan">
+                            <img loading="lazy" width="600" height="338"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTlvgWOA2Iiogb0dp_NBG1tD0mddQIvF1-wRiNV3RAlPhvGg4bZbUG7uWhAItAO8984dF6tVfacr6eHPnycWRfHoh2HHeLbTFb-rU5ZLDeqbqDXtGHn2B9anN2Ei_5kQHOBd0VOp3k6IP8ktTyQzo8ylO6f3sK4HlewNaLJ2zK5OYjBgr2yParTuw6esLlPerx6hIj3Nlurly0iPEophblzf5U66Ryx0eMDGZKqySKo9wWCU8KVyoi"
+                                alt="Recepção de clínica médica moderna, com estética clean em vidro e aço sob luz ciano suave." />
+                        </figure>
+                        <h3 class="card__title">Clínicas</h3>
+                        <p class="card__text">Design ético e sereno focado em transmitir confiança aos pacientes.</p>
+                    </li>
+
+                    <li class="card card--niche reveal delay-500">
+                        <figure class="card__media card__media--purple">
+                            <img loading="lazy" width="600" height="338"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK0fAY7aKeusARBCbdy4Jd6eCSsWYk4heRT344MrBzbjHjuY4guKL0Nbr4lovzmNFU0vhcbG3vW6vul0G1qJqkVHnLG_aYki5npmM5rozUmXaBmSm0gz22_Lo8hm6BsCuKO-rD9cw-9fXramIm1SIFCSlopoIWxt6KpoLK8aWjE9lXehd7TMHk_J4VhHg6iOHqCUY7sAo8ZVuGD2Rz5-RtbgOodV-DJmlkgEj9OqAMgmYjDCppwbYo"
+                                alt="Academia futurista com iluminação neon roxa e ciano refletindo em equipamentos metálicos." />
+                        </figure>
+                        <h3 class="card__title">Academias</h3>
+                        <p class="card__text">Layouts vibrantes e de alta energia para captar novos membros.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ===== Serviços ===== -->
+            <section id="servicos" class="services" aria-labelledby="services-title">
+                <div class="services__intro reveal">
+                    <p class="eyebrow eyebrow--pink">Nossos Serviços</p>
+                    <h2 id="services-title" class="section-title">Gestão Completa do seu Ecossistema Digital</h2>
+                    <p class="services__lead">Não apenas criamos sites; mantemos sua presença online impecável e
+                        escalável.</p>
+
+                    <ul class="services__highlights" role="list">
+                        <li class="highlight">
+                            <span class="highlight__icon" aria-hidden="true">
+                                <span class="material-symbols-outlined">verified</span>
+                            </span>
+                            <span>Hospedagem de ultra velocidade</span>
+                        </li>
+                        <li class="highlight">
+                            <span class="highlight__icon" aria-hidden="true">
+                                <span class="material-symbols-outlined">security</span>
+                            </span>
+                            <span>Manutenção &amp; segurança ativa</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="services__grid reveal delay-200" role="list">
+                    <li class="card card--service">
+                        <span class="card__icon" aria-hidden="true">
+                            <span class="material-symbols-outlined">dns</span>
+                        </span>
+                        <h3 class="card__title">Hosting</h3>
+                        <p class="card__text">Servidores dedicados de baixa latência.</p>
+                    </li>
+                    <li class="card card--service">
+                        <span class="card__icon card__icon--cyan" aria-hidden="true">
+                            <span class="material-symbols-outlined">query_stats</span>
+                        </span>
+                        <h3 class="card__title">SEO</h3>
+                        <p class="card__text">Otimização para o topo do Google.</p>
+                    </li>
+                    <li class="card card--service">
+                        <span class="card__icon card__icon--cyan" aria-hidden="true">
+                            <span class="material-symbols-outlined">update</span>
+                        </span>
+                        <h3 class="card__title">Atualizações</h3>
+                        <p class="card__text">Conteúdo renovado semanalmente.</p>
+                    </li>
+                    <li class="card card--service">
+                        <span class="card__icon" aria-hidden="true">
+                            <span class="material-symbols-outlined">build</span>
+                        </span>
+                        <h3 class="card__title">Suporte</h3>
+                        <p class="card__text">Manutenção técnica constante.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ===== Processo ===== -->
+            <section id="processo" class="process" aria-labelledby="process-title">
+                <div class="section-header reveal">
+                    <h2 id="process-title" class="section-title">Como Elevamos sua Marca</h2>
+                    <p class="section-subtitle">Um processo arquitetado para precisão e resultados.</p>
+                </div>
+
+                <ol class="process__timeline">
+                    <li class="process__step reveal">
+                        <div class="process__content">
+                            <h3 class="process__title">1. Diagnóstico</h3>
+                            <p class="process__text">Análise profunda do seu negócio e objetivos de mercado para
+                                traçar a melhor estratégia.</p>
+                        </div>
+                        <span class="process__node process__node--cyan" aria-hidden="true"></span>
+                    </li>
+                    <li class="process__step process__step--reverse reveal">
+                        <div class="process__content">
+                            <h3 class="process__title">2. Design</h3>
+                            <p class="process__text">Criação de protótipos de alta fidelidade focados em experiência
+                                do usuário e estética premium.</p>
+                        </div>
+                        <span class="process__node process__node--purple" aria-hidden="true"></span>
+                    </li>
+                    <li class="process__step reveal">
+                        <div class="process__content">
+                            <h3 class="process__title">3. Desenvolvimento</h3>
+                            <p class="process__text">Codificação limpa, rápida e responsiva utilizando as tecnologias
+                                mais modernas do mercado.</p>
+                        </div>
+                        <span class="process__node process__node--cyan" aria-hidden="true"></span>
+                    </li>
+                    <li class="process__step process__step--reverse reveal">
+                        <div class="process__content">
+                            <h3 class="process__title">4. Lançamento</h3>
+                            <p class="process__text">Deployment final, otimização de SEO e treinamento para que você
+                                domine sua nova ferramenta.</p>
+                        </div>
+                        <span class="process__node process__node--purple" aria-hidden="true"></span>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- ===== Contato ===== -->
+            <section id="contato" class="contact" aria-labelledby="contact-title">
+                <div class="contact__panel reveal">
+                    <div class="contact__info">
+                        <h2 id="contact-title" class="section-title">Pronto para o próximo nível?</h2>
+                        <p class="contact__lead">Inicie seu projeto hoje e receba uma consultoria estratégica
+                            gratuita.</p>
+
+                        <a class="btn btn--cyan btn--block" href="https://wa.me/5500000000000">
+                            <span class="material-symbols-outlined" aria-hidden="true">chat</span>
                             Falar no WhatsApp
                         </a>
-<div class="flex gap-4">
-<a class="p-4 glass-card rounded-lg hover:text-primary transition-colors" href="#">Instagram</a>
-<a class="p-4 glass-card rounded-lg hover:text-secondary-fixed transition-colors" href="#">Behance</a>
-</div>
-</div>
-<form class="flex flex-col gap-6">
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-label-sm uppercase opacity-60">Nome Completo</label>
-<input class="bg-surface border-b border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors p-3 outline-none" type="text"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-label-sm uppercase opacity-60">Email Profissional</label>
-<input class="bg-surface border-b border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors p-3 outline-none" type="email"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-sm text-label-sm uppercase opacity-60">Sua Mensagem</label>
-<textarea class="bg-surface border-b border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors p-3 outline-none resize-none" rows="3"></textarea>
-</div>
-<button class="bg-primary text-on-primary py-4 rounded-lg font-bold hover:bg-primary-fixed transition-colors" type="submit">Enviar Proposta</button>
-</form>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full rounded-t-full bg-surface-container-lowest border-t border-outline-variant/30 flex flex-col items-center gap-8 px-margin-mobile py-20 w-full max-w-container-max mx-auto text-center relative z-20">
-<div class="font-headline-md text-headline-md text-secondary-fixed">STUDIO.CRAFT</div>
-<p class="font-body-md text-body-md text-tertiary">Digital Craftsmanship for Visionaries.</p>
-<div class="flex gap-8">
-<a class="text-on-surface-variant hover:text-primary-fixed transition-transform hover:-translate-y-1" href="#">Instagram</a>
-<a class="text-on-surface-variant hover:text-primary-fixed transition-transform hover:-translate-y-1" href="#">LinkedIn</a>
-<a class="text-on-surface-variant hover:text-primary-fixed transition-transform hover:-translate-y-1" href="#">Behance</a>
-<a class="text-on-surface-variant hover:text-primary-fixed transition-transform hover:-translate-y-1" href="#">WhatsApp CTA</a>
-</div>
-<p class="text-on-surface-variant opacity-50 mt-12">© 2024 Digital Craftsmanship Studio. All rights reserved.</p>
-</footer>
-<script>
-        // Scroll-Driven Reveal Animation
-        const observerOptions = {
-            threshold: 0.1
-        };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
+                        <div class="contact__social">
+                            <a href="https://www.instagram.com/studiocraft" target="_blank" rel="noopener noreferrer">Instagram</a>
+                            <a href="https://www.behance.net/studiocraft" target="_blank" rel="noopener noreferrer">Behance</a>
+                        </div>
+                    </div>
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                    <form class="contact__form" action="#" method="post">
+                        <div class="field">
+                            <label class="field__label" for="nome">Nome completo</label>
+                            <input class="field__input" id="nome" name="nome" type="text" autocomplete="name"
+                                required />
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="email">Email profissional</label>
+                            <input class="field__input" id="email" name="email" type="email" autocomplete="email"
+                                required />
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="mensagem">Sua mensagem</label>
+                            <textarea class="field__input field__input--area" id="mensagem" name="mensagem" rows="3"
+                                required></textarea>
+                        </div>
+                        <button class="btn btn--solid" type="submit">Enviar proposta</button>
+                    </form>
+                </div>
+            </section>
+        </main>
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body></html>
+        <!-- ===== Rodapé ===== -->
+        <footer class="site-footer">
+            <p class="site-footer__brand">STUDIO.CRAFT</p>
+            <p class="site-footer__tagline">Digital Craftsmanship for Visionaries.</p>
+            <nav class="site-footer__links" aria-label="Links do rodapé">
+                <a href="https://www.instagram.com/studiocraft" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/company/studiocraft" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.behance.net/studiocraft" target="_blank" rel="noopener noreferrer">Behance</a>
+                <a href="https://wa.me/5500000000000">WhatsApp</a>
+            </nav>
+            <p class="site-footer__copy">&copy; 2024 Digital Craftsmanship Studio. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
